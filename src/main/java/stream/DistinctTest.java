@@ -15,6 +15,9 @@ public class DistinctTest {
         System.out.println("system env :" +System.getenv());
         System.out.println("system props :" +System.getProperties());
 
+        int SYN_CONSUMER_LOCK_SIZE = 1 << 5;
+        System.out.println(SYN_CONSUMER_LOCK_SIZE);
+
     }
 
 }
