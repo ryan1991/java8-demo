@@ -22,7 +22,8 @@ public class Maps {
 
         System.out.println(countMap);
 
-        Map<String, Integer> groupMap = words.stream().collect(Collectors.groupingBy(Maps::ascWord, Collectors.summingInt((x) -> 1)));
+//        Map<String, Integer> groupMap = words.stream().collect(Collectors.groupingBy(Maps::ascWord, Collectors.summingInt((x) -> 1)));
+        Map<String, Long> groupMap = words.stream().collect(Collectors.groupingBy(Maps::ascWord, Collectors.counting()));
         System.out.println(groupMap);
 
 
