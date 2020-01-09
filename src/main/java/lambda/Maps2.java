@@ -3,12 +3,8 @@ package lambda;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
 
 import static java.util.stream.Collectors.*;
-
-
-import static java.util.stream.Collectors.counting;
 
 public class Maps2 {
     public static void main(String[] args) {
