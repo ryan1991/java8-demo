@@ -12,7 +12,7 @@ public class GuavaSets {
         System.out.println("交集为：");
         Sets.SetView<Integer> intersection = Sets.intersection(sets, sets2);
 
-            System.out.println(intersection);
+        System.out.println(intersection);
 
 
 

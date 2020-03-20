@@ -1,9 +1,10 @@
 package lambda;
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import com.google.common.collect.ArrayListMultimap;
+import com.google.common.collect.Multimap;
+import com.google.common.collect.Multimaps;
+
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class Maps {
@@ -11,6 +12,17 @@ public class Maps {
     public static void main(String[] args) {
 
         List<String> words = Arrays.asList("abc", "acb", "adc", "cba", "dcfd");
+
+        Multimap<Integer, String> multimap = ArrayListMultimap.create();
+        words.forEach(w -> multimap.put(w.length(), w));
+
+        Map<Integer, List<String>> lengthWordMap = new HashMap<>();
+        words.forEach(w -> {
+            lengthWordMap.computeIfAbsent(w.length(), x -> new ArrayList<>()).add(w);
+        });
+        System.out.println("multimap:" + multimap);
+        System.out.println("lengthWordMap:" + lengthWordMap);
+
 
 
         Map<String, Counter> countMap = new HashMap<>();

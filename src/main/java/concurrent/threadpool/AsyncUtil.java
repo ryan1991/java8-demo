@@ -5,13 +5,6 @@ import java.util.concurrent.*;
 import java.util.function.Consumer;
 import java.util.function.Supplier;
 
-/**
- * Created on 2019-11-02 10:32.
- *
- * @author fuxiaolei2
- * @version 1.0
- * @since 1.0
- */
 public final class AsyncUtil {
     private static final ExecutorService executorService = new ThreadPoolExecutor(3, 20,
             1, TimeUnit.MINUTES, new LinkedBlockingQueue<>(5000), new ThreadPoolExecutor.CallerRunsPolicy());

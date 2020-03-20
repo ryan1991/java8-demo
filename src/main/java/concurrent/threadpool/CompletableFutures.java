@@ -8,28 +8,29 @@ public class CompletableFutures {
             1, TimeUnit.MINUTES, new LinkedBlockingQueue<>(5000), new ThreadPoolExecutor.CallerRunsPolicy());
 
 
-    public static void main(String[] args) {
-//        CompletableFuture<String>  future = CompletableFuture.supplyAsync(() ->{
-//            try {
-//                Thread.sleep(1000);
-//            } catch (InterruptedException e) {
-//                e.printStackTrace();
-//            }
-//
-//            return "hello";
-//        });
-
-
-
-        Optional<String> optional = AsyncUtil.getFuture(AsyncUtil.supplyAsync(() -> {
+    public static void main(String[] args) throws InterruptedException, ExecutionException, TimeoutException {
+        CompletableFuture<String>  future = CompletableFuture.supplyAsync(() ->{
             try {
-                Thread.sleep(1000L);
+                Thread.sleep(1000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
+
             return "hello";
-        }), 10000,TimeUnit.MILLISECONDS, e -> {e.printStackTrace();});
-        System.out.println(optional);
+        });
+
+        System.out.println(future.get(100, TimeUnit.MILLISECONDS));
+
+//
+//        Optional<String> optional = AsyncUtil.getFuture(AsyncUtil.supplyAsync(() -> {
+//            try {
+//                Thread.sleep(1000L);
+//            } catch (InterruptedException e) {
+//                e.printStackTrace();
+//            }
+//            return "hello";
+//        }), 10000,TimeUnit.MILLISECONDS, e -> {e.printStackTrace();});
+//        System.out.println(optional);
 
 
 
