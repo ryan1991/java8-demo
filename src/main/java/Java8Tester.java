@@ -10,7 +10,7 @@ import java.util.List;
 public class Java8Tester {
     public static void main(String[] args) {
 
-        List<String> names1 = new ArrayList<String>();
+        List<String> names1 = new ArrayList<>();
         names1.add("Google ");
         //菜鸟教程
         names1.add("Runoob ");
@@ -48,7 +48,7 @@ public class Java8Tester {
 
     // 使用 java 8 排序
     private void sortUsingJava8(List<String> names){
-        Collections.sort(names, (s1, s2) -> s1.compareTo(s2));
+        Collections.sort(names, String::compareTo);
     }
 
 }

@@ -1,5 +1,7 @@
 package stream;
 
+import com.alibaba.fastjson.JSON;
+
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -12,8 +14,8 @@ public class DistinctTest {
         System.out.println(distinct);
 
 
-        System.out.println("system env :" +System.getenv());
-        System.out.println("system props :" +System.getProperties());
+        System.out.println("system env :" + JSON.toJSONString(System.getenv()));
+        System.out.println("system props :" +JSON.toJSONString(System.getProperties()));
 
         int SYN_CONSUMER_LOCK_SIZE = 1 << 5;
         System.out.println(SYN_CONSUMER_LOCK_SIZE);
