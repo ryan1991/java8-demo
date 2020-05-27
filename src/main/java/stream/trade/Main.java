@@ -2,6 +2,7 @@ package stream.trade;
 
 import java.util.Arrays;
 import java.util.Comparator;
+import java.util.IntSummaryStatistics;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -27,6 +28,9 @@ public class Main {
 
         List<String> r3 = transactions.stream().filter(t -> "shanghai".equals(t.getTrader().getCity())).map(t -> t.getTrader().getName()).distinct().sorted().collect(Collectors.toList());
         System.out.println("r3:" + r3);
+        IntSummaryStatistics intSummaryStatistics = transactions.stream().mapToInt(Transaction::getValue).summaryStatistics();
+        System.out.println("r7:" + intSummaryStatistics.getMax());
+        System.out.println("r8:" + intSummaryStatistics.getMin());
 
 
     }
