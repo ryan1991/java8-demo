@@ -22,6 +22,10 @@ public class StringUtils {
         System.out.println("version compare:" + ("1.2.5.2-SNAPSHOT".compareTo("1.2.4.2") > 0));
 
         System.out.println("UUID:" + UUID.randomUUID().toString());
+
+        int i = (int) Double.parseDouble("2.0000");
+        System.out.println("i:" + i);
+
     }
 
     public static String extractApp(String namespace){
