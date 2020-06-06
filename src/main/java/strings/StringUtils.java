@@ -7,6 +7,7 @@ public class StringUtils {
     private final static String  DISPATCH_ERROR_CONTENT = "下发Task调度消息失败,AppId[%s],JobId[%s],TaskId[%s]";
 
     private static final String NAMESPACE_PREFIX_SENTINEL = "middleware.sentinel.";
+    private static final int SYN_CONSUMER_LOCK_SIZE = 1 << 5;
     public static void main(String[] args) {
 
         System.out.println(String.format(DISPATCH_ERROR_CONTENT, "maserati-web",null,""));
@@ -25,6 +26,8 @@ public class StringUtils {
 
         int i = (int) Double.parseDouble("2.0000");
         System.out.println("i:" + i);
+
+        System.out.println("lock size:" + SYN_CONSUMER_LOCK_SIZE);
 
     }
 
