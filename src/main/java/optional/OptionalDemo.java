@@ -1,5 +1,7 @@
 package optional;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Optional;
 
 /**
@@ -14,6 +16,13 @@ public class OptionalDemo {
         Optional<Integer> a = Optional.ofNullable(value1);
         Optional<Integer> b = Optional.of(value2);
         System.out.println(sum(a, b));
+
+        Map<String, Object> logMap = new HashMap<>();
+        Map<String, String> ext = new HashMap<>();
+        ext.put("a", "a");
+        Optional.ofNullable(ext).ifPresent(logMap::putAll);
+
+        System.out.println(logMap);
 
     }
 

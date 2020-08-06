@@ -17,8 +17,11 @@ public class DistinctTest {
         System.out.println("system env :" + JSON.toJSONString(System.getenv()));
         System.out.println("system props :" +JSON.toJSONString(System.getProperties()));
 
+
         int SYN_CONSUMER_LOCK_SIZE = 1 << 5;
         System.out.println(SYN_CONSUMER_LOCK_SIZE);
+
+
 
     }
 
