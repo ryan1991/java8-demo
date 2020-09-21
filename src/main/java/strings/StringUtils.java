@@ -36,6 +36,14 @@ public class StringUtils {
 
         System.out.println("file uuid:"+Math.abs(UUID.randomUUID().getMostSignificantBits()));
 
+        String taskType = null;
+        String format = String.format("taskType not support:%s", taskType);
+        System.out.println(format);
+
+
+        String s = "a%d";
+        System.out.println(String.format(s, System.currentTimeMillis()));
+
     }
 
     public static String extractApp(String namespace){
